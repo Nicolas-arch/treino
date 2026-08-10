@@ -54,6 +54,10 @@ ul.lst li{margin:0}
 .prox-tag{color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:99px;min-width:56px;text-align:center}
 .prox-d{color:var(--mut);font-size:11px;min-width:82px}
 .prox-t{font-weight:600;flex:1}
+.sync{border-radius:10px;padding:10px 13px;font-size:12.5px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sync.ok{background:#ebfbee;color:#2b8a3e;border:1px solid #8ce99a}
+.sync.pend{background:#fff9db;color:#e67700;border:1px solid #ffe066}
+.sync-btn{background:var(--ink);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:11.5px;font-weight:700;white-space:nowrap}
 .sug{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px}
 .s-up{background:#ebfbee;color:#2b8a3e}.s-hold{background:#e7f5ff;color:#1864ab}.s-down{background:#fff5f5;color:#c92a2a}.s-new{background:#f1f3f7;color:#6b7486}
 
@@ -158,6 +162,7 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
 
   <div class="pane" id="p-hist">
     <div class="note"><b>Como eu te aconselho a carga:</b> toque em <b>Exportar</b>, cole o texto no chat do Claude e eu devolvo os ajustes de carga, volume e ritmo com base no seu histórico real.</div>
+    <div id="syncBox"></div>
     <button class="btn b-sec" id="exp">📋 Exportar histórico (copiar)</button>
     <button class="btn b-gho" id="expTxt" style="margin-top:8px">⬇️ Baixar backup (.txt)</button>
     <div id="histList" style="margin-top:14px"></div>
@@ -362,7 +367,7 @@ document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
   document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("on"));
   document.querySelectorAll(".pane").forEach(x=>x.classList.remove("on"));
   b.classList.add("on");document.getElementById("p-"+b.dataset.p).classList.add("on");
-  if(b.dataset.p==="hist")hist();window.scrollTo(0,0);
+  if(b.dataset.p==="hist"){hist();statusSync();enviarFila(true)}window.scrollTo(0,0);
 });
 
 document.body.addEventListener("click",e=>{
@@ -405,7 +410,12 @@ function salvar(k){
   const bs=pane.querySelector("[data-borg] .on");
   db.sessoes.push({id:Date.now(),data:hoje(),tipo:"musc",treino:k.toUpperCase(),ex,
     borg:bs?+bs.dataset.v:null,obs:pane.querySelector("#obs-"+k).value||""});
-  save(db);render(k);
+  save(db);
+  const legivel={};
+  Object.keys(ex).forEach(id=>{const v=(ex[id]||[]).filter(x=>x&&(x.reps||x.kg));if(v.length)legivel[nomeEx(id)]=v});
+  enfileirar({tipo:"musc",data:hoje(),treino:k.toUpperCase(),ex:legivel,
+    borg:bs?+bs.dataset.v:"",obs:pane.querySelector("#obs-"+k).value||""});
+  render(k);
   toast(`Treino ${k.toUpperCase()} salvo · ${n} séries`);
 }
 
@@ -420,11 +430,60 @@ document.getElementById("saveRun").onclick=()=>{
     fc:document.getElementById("rFc").value,ritmo:document.getElementById("rRitmo").value,
     borg:bs?+bs.dataset.v:null,obs:document.getElementById("rObs").value||""});
   save(db);
+  const u=db.sessoes[db.sessoes.length-1];
+  enfileirar({tipo:"run",data:u.data,sub:u.sub,km:u.km,tempo:u.tempo,ritmo:u.ritmo,
+    fc:u.fc,borg:u.borg||"",obs:u.obs});
   ["rKm","rTempo","rFc","rRitmo","rObs"].forEach(i=>document.getElementById(i).value="");
   document.querySelectorAll("#borgRun .on").forEach(x=>x.classList.remove("on"));
   cardDia();
   toast("Corrida salva");
 };
+
+/* ============ SINCRONIZACAO COM A PLANILHA ============ */
+const SYNC_URL="https://script.google.com/macros/s/AKfycbzaC1O4m_OD-R2NXQ3uPiAaPTR2ElHrIMu1AZLiSnxsJ-sRWtWTkOhnk6KsLFK_alMl/exec";
+const SYNC_TOKEN="Discovery2612";
+const FILA="tr_fila_v1";
+const lerFila=()=>{try{return JSON.parse(localStorage.getItem(FILA))||[]}catch(e){return[]}};
+const gravarFila=f=>localStorage.setItem(FILA,JSON.stringify(f));
+
+function enfileirar(p){const f=lerFila();f.push(p);gravarFila(f);enviarFila()}
+
+let enviando=false;
+async function enviarFila(silencioso){
+  if(enviando)return;
+  let f=lerFila();
+  if(!f.length){statusSync();return}
+  if(navigator.onLine===false){statusSync();return}
+  enviando=true;statusSync();
+  try{
+    while(f.length){
+      const r=await fetch(SYNC_URL,{
+        method:"POST",
+        headers:{"Content-Type":"text/plain;charset=utf-8"},
+        body:JSON.stringify(Object.assign({senha:SYNC_TOKEN},f[0]))
+      });
+      const j=await r.json();
+      if(!j.ok)throw new Error(j.erro||"recusado pelo servidor");
+      f.shift();gravarFila(f);
+    }
+    if(!silencioso)toast("Enviado para a planilha ✓");
+  }catch(e){
+    const msg=String(e.message||e);
+    if(!silencioso)toast(msg.indexOf("senha")>=0?"Token recusado pela planilha":"Sem conexão — envio essa depois");
+  }finally{enviando=false;statusSync()}
+}
+
+function statusSync(){
+  const el=document.getElementById("syncBox");if(!el)return;
+  const n=lerFila().length;
+  el.innerHTML=n===0
+    ?`<div class="sync ok">✓ Planilha sincronizada — nada pendente</div>`
+    :`<div class="sync pend">⏳ ${n} registro${n>1?"s":""} aguardando envio
+       <button class="sync-btn" id="syncAgora">${enviando?"enviando…":"Enviar agora"}</button></div>`;
+  const b=document.getElementById("syncAgora");
+  if(b)b.onclick=()=>enviarFila();
+}
+window.addEventListener("online",()=>enviarFila(true));
 
 /* ============ TREINO DE CORRIDA DO DIA ============ */
 const DIAS=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
@@ -542,6 +601,9 @@ document.getElementById("tadd").onclick=()=>{tS+=15;tick()};
 
 /* funciona offline depois da primeira abertura */
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+
+/* tenta esvaziar a fila de envio ao abrir */
+enviarFila(true);
 
 /* aviso de backup a cada 10 sessões */
 if(db.sessoes.length&&db.sessoes.length%10===0){
