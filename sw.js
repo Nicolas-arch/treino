@@ -1,10 +1,15 @@
-/* Service worker — deixa o app funcionar offline depois da primeira abertura */
-const CACHE = "treino-nicolas-v1";
-const ARQUIVOS = ["./", "./index.html"];
+/* Service worker — offline + atualização automática
+   Estratégia: rede primeiro, cache como reserva.
+   Assim o app sempre pega a versão nova quando há internet,
+   e continua funcionando na academia quando não há sinal. */
+const CACHE = "treino-nicolas-v2";
+const ARQUIVOS = ["./", "./index.html", "./sw.js"];
 
 self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ARQUIVOS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then(c => c.addAll(ARQUIVOS))
+      .then(() => self.skipWaiting())   // assume o controle na hora
   );
 });
 
@@ -19,12 +24,14 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then(hit =>
-      hit || fetch(e.request).then(res => {
+    fetch(e.request)
+      .then(res => {
         const copia = res.clone();
         caches.open(CACHE).then(c => c.put(e.request, copia));
         return res;
-      }).catch(() => caches.match("./index.html"))
-    )
+      })
+      .catch(() =>
+        caches.match(e.request).then(hit => hit || caches.match("./index.html"))
+      )
   );
 });
