@@ -35,6 +35,8 @@ input,select,button,textarea{font-family:inherit;font-size:16px}
 .exn{font-weight:700;font-size:14.5px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .exn small{font-weight:500;color:var(--mut);font-size:11.5px;white-space:nowrap}
 .hint{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
+ul.lst{margin:0 0 0 17px;padding:0;font-size:13.5px;line-height:1.75}
+ul.lst li{margin:0}
 .sug{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px}
 .s-up{background:#ebfbee;color:#2b8a3e}.s-hold{background:#e7f5ff;color:#1864ab}.s-down{background:#fff5f5;color:#c92a2a}.s-new{background:#f1f3f7;color:#6b7486}
 
@@ -189,6 +191,18 @@ b:{nome:"Treino B · Superior completo",blocos:[
   {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:25,inc:2.5,h:"Abra a corda no fim."}]}
 ]}};
 
+/* ============ AQUECIMENTO E VOLTA A CALMA ============ */
+const AQ = {
+a:{tempo:"~47 min no total",
+   aq:["Bike ou elíptico — 3 min em ritmo leve","15 agachamentos livres sem carga",
+       "10 elevações de quadril no chão","10 rotações de quadril por lado"],
+   vc:["Posterior de coxa — 30s cada perna","Quadríceps — 30s cada perna",
+       "Panturrilha — 30s cada","Flexor de quadril — 30s cada lado"]},
+b:{tempo:"~47 min no total",
+   aq:["Remo ou elíptico — 3 min em ritmo leve","15 rotações de ombro para trás",
+       "10 flexões de braço","15 crucifixo invertido com carga bem leve"],
+   vc:["Peitoral na porta — 30s cada lado","Dorsal — 30s cada lado","Tríceps — 30s cada lado"]}};
+
 /* ============ STORAGE ============ */
 const DB="tr_nic_v1";
 const load=()=>{try{return JSON.parse(localStorage.getItem(DB))||{sessoes:[]}}catch(e){return{sessoes:[]}}};
@@ -233,7 +247,11 @@ function sugerir(ex){
 /* ============ RENDER TREINO ============ */
 function render(k){
   const w=W[k],pane=document.getElementById("p-"+k);
-  let h=`<div class="note"><b>${w.nome}.</b> Preencha carga, reps e RPE série a série. O RPE (0–10) é quantas reps sobraram no tanque: <b>10</b> = falha total, <b>8</b> = sobravam 2. Toque no cronômetro do bloco ao terminar cada série.</div>`;
+  const a=AQ[k];
+  let h=`<div class="note"><b>${w.nome} · ${a.tempo}.</b> Preencha carga, reps e RPE série a série. O RPE (0–10) é quantas reps sobraram no tanque: <b>10</b> = falha total, <b>8</b> = sobravam 2. Toque no cronômetro do bloco ao terminar cada série.</div>
+  <div class="blk"><div class="blkh" style="background:#f59f00"><span>0 · AQUECIMENTO — 5 min</span><button class="rest" data-r="300">⏱ 5 min</button></div>
+  <div class="ex"><ul class="lst">${a.aq.map(x=>`<li>${x}</li>`).join("")}</ul>
+  <div class="hint">Não faça alongamento estático agora — reduz produção de força. Alongamento fica no fim.</div></div></div>`;
   w.blocos.forEach(b=>{
     h+=`<div class="blk"><div class="blkh" style="background:${b.cor}"><span>${b.t}</span><button class="rest" data-r="${b.rest}">⏱ ${b.rest}s</button></div>`;
     b.ex.forEach(e=>{
@@ -251,6 +269,9 @@ function render(k){
     });
     h+=`</div>`;
   });
+  h+=`<div class="blk"><div class="blkh" style="background:#2f9e44"><span>6 · VOLTA À CALMA — 2 min</span><button class="rest" data-r="120">⏱ 2 min</button></div>
+  <div class="ex"><ul class="lst">${a.vc.map(x=>`<li>${x}</li>`).join("")}</ul>
+  <div class="hint">Agora sim o alongamento estático é útil: ajuda na recuperação e na amplitude para a corrida.</div></div></div>`;
   h+=`<div class="card"><h3>FECHAR SESSÃO</h3>
   <label class="f">BORG 6–20 · esforço geral da sessão</label><div class="borg" data-borg="${k}"></div>
   <div class="borgleg"><b>6–8</b> muito leve · <b>9–11</b> leve · <b>12–13</b> moderado · <b>14–16</b> intenso · <b>17–19</b> muito intenso · <b>20</b> máximo</div>
