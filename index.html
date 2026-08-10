@@ -37,6 +37,23 @@ input,select,button,textarea{font-family:inherit;font-size:16px}
 .hint{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
 ul.lst{margin:0 0 0 17px;padding:0;font-size:13.5px;line-height:1.75}
 ul.lst li{margin:0}
+.hoje{border:2px solid;border-radius:13px;padding:13px;margin-bottom:12px}
+.hoje-top{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:800;color:var(--mut);letter-spacing:.3px;text-transform:uppercase}
+.ok-badge{background:var(--ok);color:#fff;padding:2px 8px;border-radius:99px;font-size:10px}
+.hoje-tag{display:inline-block;color:#fff;font-size:11px;font-weight:800;padding:3px 11px;border-radius:99px;margin:9px 0 7px}
+.hoje-tit{font-size:21px;font-weight:800;line-height:1.15}
+.hoje-det{font-size:13.5px;line-height:1.55;margin-top:7px;color:#2b3a4f}
+.hoje-tab{width:100%;margin-top:11px;border-collapse:collapse;background:rgba(255,255,255,.75);border-radius:9px;overflow:hidden;font-size:12.5px}
+.hoje-tab th{font-size:9.5px;color:var(--mut);font-weight:800;padding:5px 4px;text-transform:uppercase}
+.hoje-tab td{text-align:center;font-weight:800;padding:6px 4px;font-variant-numeric:tabular-nums}
+.hoje-gym{margin-top:10px;padding-top:9px;border-top:1px dashed rgba(0,0,0,.14);font-size:12.5px;color:#2b3a4f}
+.prox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:12px}
+.prox-h{font-size:10px;font-weight:800;color:var(--mut);letter-spacing:.4px;margin-bottom:7px}
+.prox-l{display:flex;align-items:center;gap:8px;padding:5px 0;border-top:1px solid var(--line);font-size:12.5px}
+.prox-l:first-of-type{border-top:none}
+.prox-tag{color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:99px;min-width:56px;text-align:center}
+.prox-d{color:var(--mut);font-size:11px;min-width:82px}
+.prox-t{font-weight:600;flex:1}
 .sug{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px}
 .s-up{background:#ebfbee;color:#2b8a3e}.s-hold{background:#e7f5ff;color:#1864ab}.s-down{background:#fff5f5;color:#c92a2a}.s-new{background:#f1f3f7;color:#6b7486}
 
@@ -110,7 +127,8 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
   <div class="pane" id="p-b"></div>
 
   <div class="pane" id="p-run">
-    <div class="note"><b>Borg 6–20 (esforço da corrida).</b> Anote logo depois de terminar, antes de olhar o relógio — a percepção crua vale mais que o número da tela.</div>
+    <div id="hojeBox"></div>
+    <div id="proxBox"></div>
     <div class="card">
       <h3>REGISTRAR CORRIDA</h3>
       <div class="row">
@@ -190,6 +208,58 @@ b:{nome:"Treino B · Superior completo",blocos:[
   {id:"b_ros",n:"Rosca direta",sets:3,reps:"12",kg:15,inc:2.5,h:"Cotovelo colado ao tronco."},
   {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:25,inc:2.5,h:"Abra a corda no fim."}]}
 ]}};
+
+/* ============ PLANO DE CORRIDA — 10/08 a 12/09 ============ */
+/* [data, tipo, titulo, detalhe, musculacao] */
+const PLANO = [
+["2026-08-10","tiro","8 × 300 m","Ritmo 4:55–5:05 /km. Recuperação de 90s trotando entre os tiros. 10' de aquecimento antes e 10' de volta à calma depois.","Treino B — Superior"],
+["2026-08-11","leve","45 min leve","Ritmo 6:50–7:10 /km. Tem que ser fácil de verdade: se não conseguir conversar, está rápido demais.","Treino A — Inferior (pesado)"],
+["2026-08-12","mod","40 min moderado","Ritmo 6:20–6:40 /km + 4 × 100 m progressivos no final.","Treino B — Superior"],
+["2026-08-13","tempo","3 × 1 km","Ritmo 5:40–5:50 /km, recuperação de 2' entre os blocos. 10' de aquecimento antes.","Treino A — Inferior (moderado)"],
+["2026-08-14","leve","40–45 min leve","Ritmo 6:50 /km ou mais lento. Dia de recuperar.","Treino B — Superior"],
+["2026-08-15","long","Longão 45 min","Ritmo 6:30–6:45 /km, acelerando para 6:00 /km nos últimos 10 minutos.","Core / abdominal ou descanso"],
+["2026-08-16","off","Descanso","Sem corrida. Caminhada leve de 30 min se quiser se mexer.","—"],
+
+["2026-08-17","ladeira","6 × 90 s de subida","Suba forte por 90s, desça trotando para recuperar. Na esteira: 9,5 km/h com 5% de inclinação.","Treino B — Superior"],
+["2026-08-18","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
+["2026-08-19","mod","Progressivo 40 min","Comece em 6:45 /km e vá acelerando até terminar em 5:50 /km.","Treino B — Superior"],
+["2026-08-20","tempo","2 × 2 km","Ritmo 5:40 /km, recuperação de 3' entre os blocos.","Treino A — Inferior (moderado)"],
+["2026-08-21","leve","40 min regenerativo","Bem leve. FC abaixo de 150.","Treino B — Superior"],
+["2026-08-22","long","Percurso da prova","Rode o trajeto da corrida em ritmo moderado. Objetivo: conhecer a subida e contar quantos metros ela tem.","Core / abdominal ou descanso"],
+["2026-08-23","off","Descanso","Sem corrida.","—"],
+
+["2026-08-24","ladeira","5 × 2 min de subida","Recuperação de 2' descendo em trote. Na esteira: 9,5 km/h com 6% de inclinação.","Treino B — Superior"],
+["2026-08-25","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
+["2026-08-26","mod","40 min moderado","Ritmo 6:20–6:40 /km + 6 × 100 m progressivos.","Treino B — Superior"],
+["2026-08-27","tempo","4 km contínuos","Ritmo 5:35–5:45 /km sem parar. O treino mais duro da semana.","Treino A — Inferior (moderado)"],
+["2026-08-28","leve","35–40 min bem fácil","Poupe as pernas: amanhã tem simulado.","Treino B leve"],
+["2026-08-29","tiro","SIMULADO — 3 km no percurso","Faça no trajeto da prova, no pacing planejado: 5:05 / 5:00 / 5:10. Este treino decide se a meta é 25:00 ou 27:00.","Descanso de musculação"],
+["2026-08-30","off","Descanso","Sem corrida.","—"],
+
+["2026-08-31","ladeira","4 × 2 min + 2 × 1 min de subida","Recuperação completa entre as séries. Última sessão dura de ladeira da preparação.","Treino B — Superior"],
+["2026-09-01","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
+["2026-09-02","mod","Progressivo 35 min","De 6:45 /km até 5:45 /km.","Treino B — Superior"],
+["2026-09-03","tempo","3 km","Ritmo 5:30–5:40 /km.","Treino A — ÚLTIMA perna pesada"],
+["2026-09-04","leve","35 min leve","Ritmo 6:50 /km ou mais lento.","Treino B — Superior"],
+["2026-09-05","long","Ensaio geral — 3 km","No percurso da prova, no pacing exato planejado. Sem forçar: é ensaio, não teste.","Core / abdominal"],
+["2026-09-06","off","Descanso","Sem corrida.","—"],
+
+["2026-09-07","tiro","6 × 300 m curtos","Ritmo 4:55–5:05 /km, recuperação de 90s. Só para manter a velocidade viva.","Treino B leve (-30% de carga)"],
+["2026-09-08","leve","30 min leve","Bem tranquilo.","Treino A leve (sem falha)"],
+["2026-09-09","leve","25 min leve + 4 × 100 m","Progressivos curtos para deixar a perna solta.","Descanso de musculação"],
+["2026-09-10","off","Descanso","Caminhada de 20 min no máximo.","—"],
+["2026-09-11","leve","Trote de 15 min","Mais 2 × 100 m soltos. Véspera: dormir bem e comer normal.","—"],
+["2026-09-12","race","PROVA 5 K — Arauto da Paz","km1 5:05 (FC abaixo de 160) · km2 4:55 · km3 5:10 · km4 6:20 na subida · km5 tudo que sobrar. Aquecimento de 12–15' + 4 × 100 m progressivos.","—"]];
+
+const TIPOS = {
+ tiro:   {nome:"TIROS",    cor:"#c92a2a", bg:"#fff5f5", rua:"4:55–5:10 /km", est:"11,6–12,0 km/h", inc:"1%"},
+ tempo:  {nome:"TEMPO",    cor:"#e67700", bg:"#fff9db", rua:"5:35–5:50 /km", est:"10,3–10,8 km/h", inc:"1%"},
+ mod:    {nome:"MODERADO", cor:"#1971c2", bg:"#e7f5ff", rua:"6:20–6:40 /km", est:"9,0–9,5 km/h",  inc:"1%"},
+ leve:   {nome:"LEVE",     cor:"#2f9e44", bg:"#ebfbee", rua:"6:50–7:10 /km", est:"8,4–8,8 km/h",  inc:"1%"},
+ long:   {nome:"LONGO",    cor:"#6741d9", bg:"#f3f0ff", rua:"6:30–6:45 /km", est:"9,0–9,2 km/h",  inc:"1%"},
+ ladeira:{nome:"LADEIRA",  cor:"#d9480f", bg:"#ffe8cc", rua:"esforço forte", est:"9,5 km/h",      inc:"5–6%"},
+ race:   {nome:"PROVA",    cor:"#2f9e44", bg:"#ebfbee", rua:"5:00–5:10 /km", est:"—",             inc:"—"},
+ off:    {nome:"DESCANSO", cor:"#6b7486", bg:"#f1f3f7", rua:"—",             est:"—",             inc:"—"}};
 
 /* ============ AQUECIMENTO E VOLTA A CALMA ============ */
 const AQ = {
@@ -352,8 +422,56 @@ document.getElementById("saveRun").onclick=()=>{
   save(db);
   ["rKm","rTempo","rFc","rRitmo","rObs"].forEach(i=>document.getElementById(i).value="");
   document.querySelectorAll("#borgRun .on").forEach(x=>x.classList.remove("on"));
+  cardDia();
   toast("Corrida salva");
 };
+
+/* ============ TREINO DE CORRIDA DO DIA ============ */
+const DIAS=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+const fmtDia=iso=>{const d=new Date(iso+"T00:00:00");return DIAS[d.getDay()]+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0")};
+const semanaDe=iso=>Math.floor((new Date(iso+"T00:00:00")-new Date(2026,7,10))/6048e5)+1;
+const feito=iso=>db.sessoes.some(s=>s.tipo==="run"&&s.data===iso);
+
+function cardDia(){
+  const hj=hoje();
+  let idx=PLANO.findIndex(p=>p[0]===hj);
+  let futuro=false;
+  if(idx<0){idx=PLANO.findIndex(p=>p[0]>hj);futuro=true}
+  const box=document.getElementById("hojeBox");
+  if(idx<0){
+    box.innerHTML=`<div class="note"><b>Plano concluído.</b> A prova de 12/09 já passou — me chame no chat que eu monto o próximo ciclo.</div>`;
+    document.getElementById("proxBox").innerHTML="";return;
+  }
+  const [data,tipo,titulo,detalhe,musc]=PLANO[idx];
+  const t=TIPOS[tipo],ok=feito(data),sem=semanaDe(data);
+  box.innerHTML=`
+  <div class="hoje" style="border-color:${t.cor};background:${t.bg}">
+    <div class="hoje-top">
+      <span>${futuro?"PRÓXIMO TREINO":"HOJE"} · ${fmtDia(data)} · semana ${sem} de 5</span>
+      ${ok?`<span class="ok-badge">✓ feito</span>`:``}
+    </div>
+    <div class="hoje-tag" style="background:${t.cor}">${t.nome}</div>
+    <div class="hoje-tit">${titulo}</div>
+    <div class="hoje-det">${detalhe}</div>
+    ${tipo!=="off"&&tipo!=="race"?`
+    <table class="hoje-tab">
+      <tr><th>Na rua</th><th>Na esteira</th><th>Inclinação</th></tr>
+      <tr><td>${t.rua}</td><td>${t.est}</td><td>${t.inc}</td></tr>
+    </table>`:``}
+    ${musc!=="—"?`<div class="hoje-gym">🏋️ Musculação de hoje: <b>${musc}</b></div>`:``}
+  </div>`;
+  const prox=PLANO.slice(idx+1,idx+4);
+  document.getElementById("proxBox").innerHTML=prox.length?`
+  <div class="prox"><div class="prox-h">PRÓXIMOS DIAS</div>
+  ${prox.map(([d,tp,ti])=>{const x=TIPOS[tp];return `<div class="prox-l">
+    <span class="prox-tag" style="background:${x.cor}">${x.nome}</span>
+    <span class="prox-d">${fmtDia(d)}</span><span class="prox-t">${ti}</span></div>`}).join("")}
+  </div>`:"";
+  const map={tiro:"Tiros",tempo:"Tempo",mod:"Moderado",leve:"Leve",long:"Longão",ladeira:"Ladeira",race:"Prova",off:"Leve"};
+  const sel=document.getElementById("rTipo");
+  if(sel&&!futuro)sel.value=map[tipo]||"Leve";
+}
+cardDia();
 
 /* historico */
 const nomeEx=id=>{for(const k in W)for(const b of W[k].blocos)for(const e of b.ex)if(e.id===id)return e.n;return id};
