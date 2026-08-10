@@ -59,6 +59,8 @@ ul.lst li{margin:0}
 .sync.pend{background:#fff9db;color:#e67700;border:1px solid #ffe066}
 .sync-btn{background:var(--ink);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-size:11.5px;font-weight:700;white-space:nowrap}
 .sug{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px}
+.rec{background:#fff4e6;color:#a8420a;border-left:3px solid #e8590c;padding:8px 10px;border-radius:0 8px 8px 0;font-size:11.5px;margin-top:7px;line-height:1.5}
+.rec b{color:#d9480f}
 .s-up{background:#ebfbee;color:#2b8a3e}.s-hold{background:#e7f5ff;color:#1864ab}.s-down{background:#fff5f5;color:#c92a2a}.s-new{background:#f1f3f7;color:#6b7486}
 
 table.sets{width:100%;border-collapse:collapse;margin-top:9px}
@@ -181,7 +183,7 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
 const W = {
 a:{nome:"Treino A · Inferior + Posterior",blocos:[
  {t:"1 · FORÇA PRINCIPAL — séries retas",cor:"#e8590c",rest:90,ex:[
-  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8–10",kg:40,inc:2.5,h:"Coxa abaixo da paralela. Suba empurrando o chão."}]},
+  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8–10",kg:40,inc:2.5,h:"Coxa abaixo da paralela. Suba empurrando o chão.",rec:"Primeiro treino de perna do ciclo. Pare com 2–3 reps na reserva — quinta tem tempo run e sábado o longão. Se a perna estiver pesada, corte para 3 séries."}]},
  {t:"2 · BI-SET A — 4 rodadas",cor:"#1971c2",rest:60,ex:[
   {id:"a_leg",n:"Leg press 45",sets:4,reps:"10",kg:180,inc:10,h:"Não trave o joelho no topo."},
   {id:"a_stiff",n:"Stiff com barra",sets:4,reps:"10",kg:35,inc:2.5,h:"Joelho fixo, quadril para trás."}]},
@@ -198,20 +200,20 @@ a:{nome:"Treino A · Inferior + Posterior",blocos:[
 ]},
 b:{nome:"Treino B · Superior completo",blocos:[
  {t:"1 · FORÇA PRINCIPAL — séries retas",cor:"#e8590c",rest:90,ex:[
-  {id:"b_sup",n:"Supino reto com barra",sets:4,reps:"8–10",kg:30,inc:2.5,h:"Escápulas travadas, cotovelo a 45°."}]},
+  {id:"b_sup",n:"Supino reto com barra",sets:4,reps:"8–10",kg:25,inc:2.5,h:"Escápulas travadas, cotovelo a 45°.",rec:"Com halteres use 12,5+12,5 kg. Se a barra estiver livre, 30 kg. Em 10/08 você fez 3 séries na falha e as reps caíram de 10 para 6 — pare com 2 reps na reserva."}]},
  {t:"2 · BI-SET A — 4 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"b_rem",n:"Remada máquina (neutra)",sets:4,reps:"10",kg:75,inc:5,h:"Puxe com o cotovelo, aperte a escápula."},
-  {id:"b_inc",n:"Incline press",sets:4,reps:"10",kg:20,inc:2.5,h:"Banco a 30–45°, ombro estável."}]},
+  {id:"b_rem",n:"Remada máquina (neutra)",sets:4,reps:"10",kg:75,inc:5,h:"Puxe com o cotovelo, aperte a escápula.",rec:"Melhor exercício do último treino: 4×10 com RPE 8,9. Repita 75 kg buscando RPE 8 — se sair, 80 kg na próxima."},
+  {id:"b_inc",n:"Incline press",sets:4,reps:"10",kg:30,inc:2.5,h:"Banco a 30–45°, ombro estável.",rec:"Você subiu sozinho de 20 para 30 kg e acertou. Feche as 4 séries de 10 antes de ir para 32,5."}]},
  {t:"3 · BI-SET B — 4 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"b_pux",n:"Puxada articulada aberta",sets:4,reps:"10",kg:120,inc:5,h:"Peito estufado, volta em 3s."},
-  {id:"b_des",n:"Desenvolvimento halteres sentado",sets:4,reps:"10",kg:12,inc:2,h:"Não trave o cotovelo no topo."}]},
+  {id:"b_pux",n:"Puxada articulada aberta",sets:4,reps:"10",kg:115,inc:5,h:"Peito estufado, volta em 3s.",rec:"Baixei de 120 para 115. Você fechou as 4 séries, mas com RPE 9,75 — falha total. 115 com RPE 8–9 rende mais e cansa menos."},
+  {id:"b_des",n:"Desenvolvimento halteres sentado",sets:4,reps:"10",kg:14,inc:2,h:"Não trave o cotovelo no topo.",rec:"Boa progressão de 12 para 14 kg. Consolide os 14 antes de subir de novo."}]},
  {t:"4 · BI-SET C — 3 rodadas",cor:"#1971c2",rest:45,ex:[
-  {id:"b_rbx",n:"Remada baixa (pronada)",sets:3,reps:"12",kg:50,inc:5,h:"Tronco fixo, sem impulso lombar."},
-  {id:"b_cru",n:"Crucifixo inclinado",sets:3,reps:"12",kg:10,inc:2,h:"Cotovelo fixo, não vire supino."}]},
+  {id:"b_rbx",n:"Remada baixa (pronada)",sets:3,reps:"12",kg:61,inc:5,h:"Tronco fixo, sem impulso lombar.",rec:"A meta são 12 reps e você fez 10. Feche as 12 com 61 kg antes de subir."},
+  {id:"b_cru",n:"Crucifixo inclinado",sets:3,reps:"12",kg:16,inc:2,h:"Cotovelo fixo, não vire supino.",rec:"⚠️ Baixei de 22 para 16 kg. Peitoral alongado com ombro vulnerável + falha é o maior risco de lesão do treino inteiro. Nunca leve este à falha."}]},
  {t:"5 · FINALIZADOR — tri-set, 3 rodadas",cor:"#2f9e44",rest:40,ex:[
-  {id:"b_lat",n:"Elevação lateral",sets:3,reps:"12",kg:7,inc:1,h:"Sem impulso, até a linha do ombro."},
-  {id:"b_ros",n:"Rosca direta",sets:3,reps:"12",kg:15,inc:2.5,h:"Cotovelo colado ao tronco."},
-  {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:25,inc:2.5,h:"Abra a corda no fim."}]}
+  {id:"b_lat",n:"Elevação lateral",sets:3,reps:"12",kg:10,inc:1,h:"Sem impulso, até a linha do ombro.",rec:"Mantenha 10 kg e busque as 12 reps (você fez 10)."},
+  {id:"b_ros",n:"Rosca direta",sets:3,reps:"12",kg:17.5,inc:2.5,h:"Cotovelo colado ao tronco.",rec:"Baixei de 20 para 17,5. Três séries na falha num isolado é fadiga sem retorno."},
+  {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:45,inc:2.5,h:"Abra a corda no fim.",rec:"Baixei de 50 para 45, mesmo motivo da rosca. Busque RPE 8–9."}]}
 ]}};
 
 /* ============ PLANO DE CORRIDA — 10/08 a 12/09 ============ */
@@ -219,8 +221,8 @@ b:{nome:"Treino B · Superior completo",blocos:[
 const PLANO = [
 ["2026-08-10","tiro","8 × 300 m","Ritmo 4:55–5:05 /km. Recuperação de 90s trotando entre os tiros. 10' de aquecimento antes e 10' de volta à calma depois.","Treino B — Superior"],
 ["2026-08-11","leve","45 min leve","Ritmo 6:50–7:10 /km. Tem que ser fácil de verdade: se não conseguir conversar, está rápido demais.","Treino A — Inferior (pesado)"],
-["2026-08-12","mod","40 min moderado","Ritmo 6:20–6:40 /km + 4 × 100 m progressivos no final.","Treino B — Superior"],
-["2026-08-13","tempo","3 × 1 km","Ritmo 5:40–5:50 /km, recuperação de 2' entre os blocos. 10' de aquecimento antes.","Treino A — Inferior (moderado)"],
+["2026-08-12","mod","40 min moderado","Ritmo 6:20–6:40 /km + 4 × 100 m progressivos no final. Esteira a 1% de inclinação.","Treino B — Superior"],
+["2026-08-13","tempo","3 × 1 km","Ritmo 5:40–5:50 /km (esteira 10,3–10,8 km/h a 1%), recuperação de 2' TROTANDO a 7,5 km/h. 10' de aquecimento antes.","Treino A — Inferior (moderado)"],
 ["2026-08-14","leve","40–45 min leve","Ritmo 6:50 /km ou mais lento. Dia de recuperar.","Treino B — Superior"],
 ["2026-08-15","long","Longão 45 min","Ritmo 6:30–6:45 /km, acelerando para 6:00 /km nos últimos 10 minutos.","Core / abdominal ou descanso"],
 ["2026-08-16","off","Descanso","Sem corrida. Caminhada leve de 30 min se quiser se mexer.","—"],
@@ -323,7 +325,7 @@ function sugerir(ex){
 function render(k){
   const w=W[k],pane=document.getElementById("p-"+k);
   const a=AQ[k];
-  let h=`<div class="note"><b>${w.nome} · ${a.tempo}.</b> Preencha carga, reps e RPE série a série. O RPE (0–10) é quantas reps sobraram no tanque: <b>10</b> = falha total, <b>8</b> = sobravam 2. Toque no cronômetro do bloco ao terminar cada série.</div>
+  let h=`<div class="note"><b>${w.nome} · ${a.tempo}.</b> Preencha carga, reps e RPE série a série. O RPE (0–10) é quantas reps sobraram no tanque: <b>10</b> = falha total, <b>8</b> = sobravam 2. <b>Mire RPE 8 na maioria das séries</b> — falha só na última série dos isolados. Toque no cronômetro do bloco ao terminar cada série.</div>
   <div class="blk"><div class="blkh" style="background:#f59f00"><span>0 · AQUECIMENTO — 5 min</span><button class="rest" data-r="300">⏱ 5 min</button></div>
   <div class="ex"><ul class="lst">${a.aq.map(x=>`<li>${x}</li>`).join("")}</ul>
   <div class="hint">Não faça alongamento estático agora — reduz produção de força. Alongamento fica no fim.</div></div></div>`;
@@ -332,7 +334,7 @@ function render(k){
     b.ex.forEach(e=>{
       const s=sugerir(e);
       h+=`<div class="ex"><div class="exn"><span>${e.n}</span><small>${e.sets}× ${e.reps}</small></div>
-      <div class="hint">${e.h}</div><div class="sug ${s.cls}">${s.txt}</div>
+      <div class="hint">${e.h}</div><div class="sug ${s.cls}">${s.txt}</div>${e.rec?`<div class="rec"><b>Treinador:</b> ${e.rec}</div>`:""}
       <table class="sets"><tr><th></th><th>Carga (kg)</th><th>Reps</th><th>RPE</th></tr>`;
       for(let i=0;i<e.sets;i++){
         h+=`<tr><td>${i+1}ª</td>
