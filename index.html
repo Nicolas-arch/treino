@@ -183,12 +183,12 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
 const W = {
 a:{nome:"Treino A · Inferior + Posterior",blocos:[
  {t:"1 · FORÇA PRINCIPAL — séries retas",cor:"#e8590c",rest:90,ex:[
-  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8–10",kg:80,inc:5,h:"Coxa abaixo da paralela. PESO TOTAL: barra de 20 kg + anilhas dos dois lados.",rec:"Fechou 4×10 a 80 kg com RPE 8,7 em 18/08 — primeira vez batendo o peso total (80 kg) limpo. Mantenha 80 kg e busque RPE 8 antes de subir para 82,5–85 kg."}]},
+  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8–10",kg:80,inc:5,h:"Coxa abaixo da paralela. PESO TOTAL: barra de 20 kg + anilhas dos dois lados. ⬇️ ATÉ 26/10: fase de DESCIDA em 3 segundos controlados — é o que blinda o quadríceps contra os −63 m de descida do percurso. Cortar a partir de 26/10.",rec:"Fechou 4×10 a 80 kg com RPE 8,7 em 18/08 — primeira vez batendo o peso total (80 kg) limpo. Mantenha 80 kg e busque RPE 8 antes de subir para 82,5–85 kg."}]},
  {t:"2 · BI-SET A — 4 rodadas",cor:"#1971c2",rest:60,ex:[
   {id:"a_leg",n:"Leg press 45",sets:4,reps:"10",kg:210,inc:10,h:"Não trave o joelho no topo.",rec:"4×10 a 200 kg com RPE 8,1 em 18/08 — sobrou fôlego em todas as series. Suba para 210 kg."},
   {id:"a_stiff",n:"Stiff com barra",sets:4,reps:"10",kg:70,inc:5,h:"Joelho fixo, quadril para trás. PESO TOTAL: barra de 20 kg + anilhas.",rec:"4 series a 70 kg (10/10/10/9 reps) RPE 8,6 em 18/08 — quase fechando limpo. Mantenha 70 kg ate bater 4×10 com RPE 8."}]},
  {t:"3 · BI-SET B — 3 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"a_bulg",n:"Búlgaro com halteres",sets:3,reps:"10/perna",kg:20,inc:2,h:"Desça controlado em 2s.",rec:"Inconsistencia nas cargas em 18/08: fez 10 kg (8 reps RPE 9,5), 10 kg (10 reps RPE 8,5) e 20 kg (10 reps RPE 8,5) na mesma sessao. Use 20 kg (peso total, 2 halteres de 10) nas 3 series e anote certinho a carga de cada uma."},
+  {id:"a_bulg",n:"Búlgaro com halteres",sets:3,reps:"10/perna",kg:20,inc:2,h:"⬇️ ATÉ 26/10: desça em 3 segundos controlados (não 2). Excêntrico lento é treino de descida. Cortar a partir de 26/10 — o músculo precisa chegar recuperado na prova.",rec:"Inconsistencia nas cargas em 18/08: fez 10 kg (8 reps RPE 9,5), 10 kg (10 reps RPE 8,5) e 20 kg (10 reps RPE 8,5) na mesma sessao. Use 20 kg (peso total, 2 halteres de 10) nas 3 series e anote certinho a carga de cada uma."},
   {id:"a_flex",n:"Cadeira flexora",sets:3,reps:"10",kg:78,inc:5,h:"Contraia 1s, volta em 3s. Se a máquina for ruim, troque por stiff unilateral ou nordic curl.",rec:"3×10 a 73 kg RPE 8,2 em 18/08 — reps fechadas com folga. Suba para 78 kg."}]},
  {t:"4 · BI-SET C — 3 rodadas",cor:"#1971c2",rest:45,ex:[
   {id:"a_afu",n:"Afundo com halteres",sets:3,reps:"10/perna",kg:22,inc:2,h:"Passada longa, tronco ereto.",rec:"3×10 a 20 kg RPE 7,8 em 18/08 — sobra RPE. Suba para 22 kg."},
@@ -216,57 +216,102 @@ b:{nome:"Treino B · Superior completo",blocos:[
   {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:50,inc:2.5,h:"Abra a corda no fim.",rec:"Completou as 3 series pela primeira vez (12/12/12, RPE 9 constante) em 24/08. RPE ainda alto — mantenha 50 kg ate RPE 8 antes de subir."}]}
 ]}};
 
-/* ============ PLANO DE CORRIDA — 10/08 a 12/09 ============ */
+/* ============ PLANO DE CORRIDA — 25/08 a 14/11/2026 (82 dias) ============ */
 /* [data, tipo, titulo, detalhe, musculacao] */
 const PLANO = [
-["2026-08-10","tiro","8 × 300 m","Ritmo 4:55–5:05 /km. Recuperação de 90s trotando entre os tiros. 10' de aquecimento antes e 10' de volta à calma depois.","Treino B — Superior"],
-["2026-08-11","leve","45 min leve","Ritmo 6:50–7:10 /km. Tem que ser fácil de verdade: se não conseguir conversar, está rápido demais.","Treino A — Inferior (pesado)"],
-["2026-08-12","mod","40 min moderado","Ritmo 6:20–6:40 /km + 4 × 100 m progressivos no final. Esteira a 1% de inclinação.","Treino B — Superior"],
-["2026-08-13","tempo","3 × 1 km","Ritmo 5:40–5:50 /km (esteira 10,3–10,8 km/h a 1%), recuperação de 2' TROTANDO a 7,5 km/h. 10' de aquecimento antes.","Treino A — Inferior (moderado)"],
-["2026-08-14","leve","40–45 min leve","Ritmo 6:50 /km ou mais lento. Dia de recuperar.","Treino B — Superior"],
-["2026-08-15","off","🏖️ Beach tennis 9h–12h — SEM corrida","Três horas na areia já é o treino do dia, e das pesadas: areia sobrecarrega panturrilha, tendão de Aquiles e fáscia plantar. Não some corrida a isso. Hidrate bem e não corra atrás de toda bola nas duas últimas horas.","Descanso de musculação"],
-["2026-08-16","off","Descanso total","Depois de 5 dias de treino e 3h de beach tennis no sábado, hoje é descanso — e é decisão de treinador, não preguiça. É no descanso que a adaptação acontece.","—"],
-
-["2026-08-17","ladeira","6 × 90 s de subida","Suba forte por 90s, desça trotando para recuperar. Na esteira: 9,5 km/h com 5% de inclinação.","Treino B — Superior"],
-["2026-08-18","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
-["2026-08-19","mod","Progressivo 40 min","Comece em 6:45 /km e vá acelerando até terminar em 5:50 /km.","Treino B — Superior"],
-["2026-08-20","tempo","2 × 2 km","Ritmo 5:40 /km, recuperação de 3' entre os blocos.","Treino A — Inferior (moderado)"],
-["2026-08-21","leve","40 min regenerativo","Bem leve. FC abaixo de 150.","Treino B — Superior"],
-["2026-08-22","long","Percurso da prova","Rode o trajeto da corrida em ritmo moderado. Objetivo: conhecer a subida e contar quantos metros ela tem.","Core / abdominal ou descanso"],
-["2026-08-23","off","Descanso","Sem corrida.","—"],
-
-["2026-08-24","ladeira","5 × 2 min de subida","Recuperação de 2 min descendo em trote ou caminhando. Na esteira: 9,5 km/h com 5–6% de inclinação — NÃO passe de 6%. Em 17/08 você usou 8–10% e isso sobrecarrega Aquiles e panturrilha sem ganho extra.","Treino B — Superior"],
-["2026-08-25","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
-["2026-08-26","mod","40 min moderado","Ritmo 6:20–6:40 /km + 6 × 100 m progressivos.","Treino B — Superior"],
-["2026-08-27","tempo","4 km contínuos","Ritmo 5:35–5:45 /km sem parar. O treino mais duro da semana.","Treino A — Inferior (moderado)"],
-["2026-08-28","leve","35–40 min bem fácil","Poupe as pernas: amanhã tem simulado.","Treino B leve"],
-["2026-08-29","tiro","SIMULADO — 3 km no percurso","Faça no trajeto da prova, no pacing planejado: 5:05 / 5:00 / 5:10. Este treino decide se a meta é 25:00 ou 27:00.","Descanso de musculação"],
-["2026-08-30","off","Descanso","Sem corrida.","—"],
-
-["2026-08-31","ladeira","4 × 2 min + 2 × 1 min de subida","Recuperação completa entre as séries. Esteira a 5–6% de inclinação, no máximo. Última sessão dura de ladeira da preparação.","Treino B — Superior"],
-["2026-09-01","leve","45 min leve","Ritmo 6:50–7:10 /km.","Treino A — Inferior (pesado)"],
-["2026-09-02","mod","Progressivo 35 min","De 6:45 /km até 5:45 /km.","Treino B — Superior"],
-["2026-09-03","tempo","3 km","Ritmo 5:30–5:40 /km.","Treino A — ÚLTIMA perna pesada"],
-["2026-09-04","leve","35 min leve","Ritmo 6:50 /km ou mais lento.","Treino B — Superior"],
-["2026-09-05","long","Ensaio geral — 3 km","No percurso da prova, no pacing exato planejado. Sem forçar: é ensaio, não teste.","Core / abdominal"],
-["2026-09-06","off","Descanso","Sem corrida.","—"],
-
-["2026-09-07","tiro","6 × 300 m curtos","Ritmo 4:55–5:05 /km, recuperação de 90s. Só para manter a velocidade viva.","Treino B leve (-30% de carga)"],
-["2026-09-08","leve","30 min leve","Bem tranquilo.","Treino A leve (sem falha)"],
-["2026-09-09","leve","25 min leve + 4 × 100 m","Progressivos curtos para deixar a perna solta.","Descanso de musculação"],
-["2026-09-10","off","Descanso","Caminhada de 20 min no máximo.","—"],
-["2026-09-11","leve","Trote de 15 min","Mais 2 × 100 m soltos. Véspera: dormir bem e comer normal.","—"],
-["2026-09-12","race","PROVA 5 K — Arauto da Paz","km1 5:05 (FC abaixo de 160) · km2 4:55 · km3 5:10 · km4 6:20 na subida · km5 tudo que sobrar. Aquecimento de 12–15' + 4 × 100 m progressivos.","—"]];
+["2026-08-25", "ladeira", "5 × 2 min de subida", "Recuperação de 2 min descendo em trote. Esteira: 9,5 km/h a 5–6% de inclinação — TETO DE 6%, sem exceção.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-08-26", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-08-27", "mod", "40 min moderado", "Ritmo 6:20–6:40 /km. É pra ser moderado mesmo: se a FC passar de 165, corta pra 30 min e vira leve.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-08-28", "leve", "40 min leve", "Ritmo 6:50–7:10 /km. Borg 12–13. Se vier mais alto que isso, é fadiga acumulada.", "Treino B — Superior"],
+["2026-08-29", "long", "PERCURSO COMPLETO — 8 km fácil", "No trajeto da prova, ritmo fácil do início ao fim. Objetivo único: CORRER a subida inteira, mesmo que a 8:00 /km. Não caminhe.", "Descanso de musculação"],
+["2026-08-30", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-08-31", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-01", "ladeira", "6 × 2 min de subida", "Esteira 9,5 km/h a 5–6%. Subiu de 5 para 6 repetições.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-09-02", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-09-03", "tempo", "3 km contínuos", "Ritmo 5:20–5:50 /km sem parar. 10' de aquecimento antes.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-09-04", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-05", "long", "9 km fácil", "Ritmo 6:30–6:50 /km. Volume, não intensidade.", "Descanso de musculação"],
+["2026-09-06", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-09-07", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-08", "ladeira", "5 × 2 min subida + 4 × DESCIDA controlada", "Primeira sessão de descida técnica: cadência acima de 180, passada curta, pé caindo embaixo do corpo, SEM frear com o calcanhar. Na descida você olha cadência, não pace.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-09-09", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-09-10", "tempo", "4 km contínuos", "Ritmo 5:20–5:50 /km sem parar.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-09-11", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-12", "long", "10 km fácil", "Ritmo 6:30–6:50 /km.", "Descanso de musculação"],
+["2026-09-13", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-09-14", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-15", "ladeira", "4 × 3 min de subida", "Blocos mais longos, mesma inclinação: 5–6%. Recuperação completa entre as séries.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-09-16", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-09-17", "mod", "35 min moderado + 6 × 100 m", "Moderado a 6:20–6:40 /km e os 100 m progressivos no final, soltos.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-09-18", "leve", "30 min bem fácil", "Poupe a perna: amanhã tem simulado.", "Treino B — Superior"],
+["2026-09-19", "simulado", "SIMULADO 1 — 5 km no percurso", "Alvo 28:00–28:30. OBRIGATÓRIO: correr a subida inteira e passar o km 3 com FC ABAIXO DE 168. É diagnóstico, não é prova — não vale acelerar na descida pra ganhar tempo.", "Descanso de musculação"],
+["2026-09-20", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-09-21", "leve", "40 min regenerativo", "Bem leve, FC abaixo de 150. Dia de absorver o simulado.", "Treino B — Superior"],
+["2026-09-22", "tiro", "5 × 800 m", "Ritmo 4:40–5:15 /km. Recuperação de 2' trotando. 10' de aquecimento antes e volta à calma depois.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-09-23", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-09-24", "tempo", "4 km contínuos", "Ritmo 5:20–5:50 /km.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-09-25", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-26", "long", "10 km — últimos 3 km a 6:00 /km", "Fácil até o km 7, depois segure 6:00 /km até o fim. Treino de terminar cansado no controle.", "Descanso de musculação"],
+["2026-09-27", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-09-28", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-09-29", "ladeira", "6 × a SUBIDA REAL do km 4", "No próprio percurso da prova. Suba o trecho de +49 m seis vezes, desça trotando. Passada curta, braços trabalhando.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-09-30", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-10-01", "tiro", "6 × 600 m", "Ritmo 4:40–5:15 /km, recuperação de 90s trotando.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-02", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-03", "long", "11 km fácil", "Ritmo 6:30–6:50 /km. Maior volume do ciclo até aqui.", "Descanso de musculação"],
+["2026-10-04", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-10-05", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-06", "ladeira", "SUBIDA COM PERNA CANSADA", "20 min moderado ANTES e só então 5 × 2 min de subida. Simula exatamente o que a prova cobra: subir com a perna já gasta.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-07", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-10-08", "tempo", "5 km contínuos", "Ritmo 5:20–5:50 /km. Sessão mais longa de tempo do ciclo.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-09", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-10", "long", "11 km — últimos 4 km a 5:50 /km", "Fácil até o km 7, depois 5:50 /km firme até o fim.", "Descanso de musculação"],
+["2026-10-11", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-10-12", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-13", "tiro", "4 × 1000 m", "Ritmo 4:40–5:15 /km, recuperação de 2'30\" trotando.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-14", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-10-15", "mod", "30 min moderado + 6 × 100 m", "Aliviando pro simulado de sábado.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-16", "leve", "25 min bem fácil", "Véspera de simulado. Perna leve.", "Treino B — Superior"],
+["2026-10-17", "simulado", "SIMULADO 2 — 5 km no percurso (quase-prova)", "Alvo 26:00–26:30 no pacing ensaiado: 5:00 / 5:05 / 5:05 / 6:00 / 5:15. AQUI a meta de 25:00 se confirma ou vira 26:30.", "Descanso de musculação"],
+["2026-10-18", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-10-19", "leve", "40 min regenerativo", "FC abaixo de 150.", "Treino B — Superior"],
+["2026-10-20", "tiro", "8 × 400 m", "Ritmo 4:40–5:00 /km, recuperação de 90s. Velocidade pura.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-21", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-10-22", "tempo", "4 km contínuos", "Ritmo 5:20–5:40 /km.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-23", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-24", "long", "10 km — 3 km do meio no pace de prova", "Os km 4, 5 e 6 a 5:17 /km. Resto fácil.", "Descanso de musculação"],
+["2026-10-25", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-10-26", "leve", "40 min leve", "Ritmo 6:50–7:10 /km. A partir de hoje a musculação de perna reduz volume.", "Treino B — Superior"],
+["2026-10-27", "ladeira", "20 min moderado + 6 × 90 s de subida forte", "Última sessão dura de ladeira do ciclo.", "Treino A — Inferior, VOLUME REDUZIDO"],
+["2026-10-28", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-10-29", "tiro", "5 × 1000 m", "Ritmo 4:50–5:10 /km, recuperação de 2'30\".", "Treino A — Inferior leve"],
+["2026-10-30", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-31", "long", "10 km — 3 km finais a 5:20 /km", "Terminar rápido com a perna cansada. Ensaio do que a prova pede.", "Descanso de musculação"],
+["2026-11-01", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-11-02", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-11-03", "tiro", "6 × 400 m soltos", "Ritmo de prova, sem forçar. Recuperação completa.", "Treino A — ÚLTIMA perna pesada do ciclo"],
+["2026-11-04", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
+["2026-11-05", "tempo", "3 km contínuos", "Ritmo 5:20–5:40 /km. Volume caindo, intensidade mantida.", "Treino A — Inferior leve"],
+["2026-11-06", "leve", "30 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
+["2026-11-07", "long", "ENSAIO GERAL — 3 km no percurso", "No pacing exato da prova, SEM all-out. Só calibra a sensação: 5:00 / 5:05 / 5:05.", "Descanso de musculação"],
+["2026-11-08", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-11-09", "leve", "30 min leve", "Taper começou. Musculação de perna acabou — só superior e leve daqui pra frente.", "Treino B — Superior leve"],
+["2026-11-10", "tiro", "5 × 200 m no pace de prova", "5:17 /km, recuperação completa. Só pra manter a velocidade viva.", "Treino B — Superior leve (sem perna)"],
+["2026-11-11", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior leve ou descanso"],
+["2026-11-12", "leve", "25 min leve + 4 × 100 m", "Progressivos curtos pra deixar a perna solta.", "Descanso de musculação"],
+["2026-11-13", "off", "Véspera de prova", "Sem corrida. Dormir bem, comer normal, nada de comida nova. Separe roupa e tênis hoje.", "—"],
+["2026-11-14", "race", "PROVA 5 K — Parque Ecológico", "PLANO A (25:00): km1 5:00 com FC abaixo de 158 · km2 5:05 (descida íngreme — cadência alta, não se jogue) · km3 5:05 · km4 6:00 na subida, passada curta · 700 m finais 5:15. PLANO B (dia ruim): 5:05 / 5:10 / 5:10 / 6:10 / 5:25 = 25:22. REGRA DE OURO: passou o km 1 abaixo de 4:55 ou com FC acima de 160 — FREIE.", "—"]];
 
 const TIPOS = {
- tiro:   {nome:"TIROS",    cor:"#c92a2a", bg:"#fff5f5", rua:"4:55–5:10 /km", est:"11,6–12,0 km/h", inc:"1%"},
- tempo:  {nome:"TEMPO",    cor:"#e67700", bg:"#fff9db", rua:"5:35–5:50 /km", est:"10,3–10,8 km/h", inc:"1%"},
- mod:    {nome:"MODERADO", cor:"#1971c2", bg:"#e7f5ff", rua:"6:20–6:40 /km", est:"9,0–9,5 km/h",  inc:"1%"},
- leve:   {nome:"LEVE",     cor:"#2f9e44", bg:"#ebfbee", rua:"6:50–7:10 /km", est:"8,4–8,8 km/h",  inc:"1%"},
- long:   {nome:"LONGO",    cor:"#6741d9", bg:"#f3f0ff", rua:"6:30–6:45 /km", est:"9,0–9,2 km/h",  inc:"1%"},
- ladeira:{nome:"LADEIRA",  cor:"#d9480f", bg:"#ffe8cc", rua:"esforço forte", est:"9,5 km/h",      inc:"5–6%"},
- race:   {nome:"PROVA",    cor:"#2f9e44", bg:"#ebfbee", rua:"5:00–5:10 /km", est:"—",             inc:"—"},
- off:    {nome:"DESCANSO", cor:"#6b7486", bg:"#f1f3f7", rua:"—",             est:"—",             inc:"—"}};
+ tiro:    {nome:"TIROS",    cor:"#c92a2a", bg:"#fff5f5", rua:"4:40–5:15 /km", est:"11,4–12,8 km/h", inc:"1%"},
+ tempo:   {nome:"TEMPO",    cor:"#e67700", bg:"#fff9db", rua:"5:20–5:50 /km", est:"10,3–11,2 km/h", inc:"1%"},
+ mod:     {nome:"MODERADO", cor:"#1971c2", bg:"#e7f5ff", rua:"6:20–6:40 /km", est:"9,0–9,5 km/h",   inc:"1%"},
+ leve:    {nome:"LEVE",     cor:"#2f9e44", bg:"#ebfbee", rua:"6:50–7:10 /km", est:"8,4–8,8 km/h",   inc:"1%"},
+ long:    {nome:"LONGO",    cor:"#6741d9", bg:"#f3f0ff", rua:"6:30–6:50 /km", est:"9,0–9,2 km/h",   inc:"1%"},
+ ladeira: {nome:"LADEIRA",  cor:"#d9480f", bg:"#ffe8cc", rua:"esforço forte", est:"9,5 km/h",       inc:"5–6% — TETO"},
+ simulado:{nome:"SIMULADO", cor:"#9c36b5", bg:"#f8f0fc", rua:"pacing de prova", est:"—",            inc:"percurso real"},
+ race:    {nome:"PROVA",    cor:"#2f9e44", bg:"#ebfbee", rua:"5:17 /km médio", est:"—",             inc:"—"},
+ off:     {nome:"DESCANSO", cor:"#6b7486", bg:"#f1f3f7", rua:"—",              est:"—",             inc:"—"}};
 
 /* ============ AQUECIMENTO E VOLTA A CALMA ============ */
 const AQ = {
@@ -290,7 +335,7 @@ const brDate=s=>s.split("-").reverse().slice(0,2).join("/");
 const toast=m=>{const t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove("on"),2200)};
 
 /* contagem regressiva prova */
-const prova=new Date(2026,8,12);
+const prova=new Date(2026,10,14);
 const dd=Math.max(0,Math.round((prova-new Date().setHours(0,0,0,0))/864e5));
 document.getElementById("cd").textContent=dd+" dias p/ a prova";
 
@@ -490,7 +535,7 @@ window.addEventListener("online",()=>enviarFila(true));
 /* ============ TREINO DE CORRIDA DO DIA ============ */
 const DIAS=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
 const fmtDia=iso=>{const d=new Date(iso+"T00:00:00");return DIAS[d.getDay()]+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0")};
-const semanaDe=iso=>Math.floor((new Date(iso+"T00:00:00")-new Date(2026,7,10))/6048e5)+1;
+const semanaDe=iso=>Math.floor((new Date(iso+"T00:00:00")-new Date(2026,7,24))/6048e5)+1;
 const feito=iso=>db.sessoes.some(s=>s.tipo==="run"&&s.data===iso);
 
 function cardDia(){
@@ -500,7 +545,7 @@ function cardDia(){
   if(idx<0){idx=PLANO.findIndex(p=>p[0]>hj);futuro=true}
   const box=document.getElementById("hojeBox");
   if(idx<0){
-    box.innerHTML=`<div class="note"><b>Plano concluído.</b> A prova de 12/09 já passou — me chame no chat que eu monto o próximo ciclo.</div>`;
+    box.innerHTML=`<div class="note"><b>Plano concluído.</b> A prova de 14/11 já passou — me chame no chat que eu monto o próximo ciclo.</div>`;
     document.getElementById("proxBox").innerHTML="";return;
   }
   const [data,tipo,titulo,detalhe,musc]=PLANO[idx];
@@ -570,7 +615,7 @@ function hist(){
 }
 
 function txtExport(){
-  let o=`REGISTRO DE TREINO — Nicolas · gerado em ${brDate(hoje())}\nProva 5K: 12/09/2026 (${dd} dias)\n\n`;
+  let o=`REGISTRO DE TREINO — Nicolas · gerado em ${brDate(hoje())}\nProva 5K: 14/11/2026 — Parque Ecológico (${dd} dias)\n\n`;
   [...db.sessoes].reverse().forEach(s=>{
     if(s.tipo==="run"){o+=`[${brDate(s.data)}] CORRIDA ${s.sub}: ${s.km}km ${s.tempo||""} ${s.ritmo||""} ${s.fc?"FC"+s.fc:""} ${s.borg?"Borg"+s.borg:""}\n${s.obs?"  obs: "+s.obs+"\n":""}`;return}
     o+=`[${brDate(s.data)}] TREINO ${s.treino}${s.borg?` (Borg ${s.borg})`:""}\n`;

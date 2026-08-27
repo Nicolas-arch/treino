@@ -2,7 +2,7 @@
    Estratégia: rede primeiro, cache como reserva.
    Assim o app sempre pega a versão nova quando há internet,
    e continua funcionando na academia quando não há sinal. */
-const CACHE = "treino-nicolas-v2";
+const CACHE = "treino-nicolas-v3";
 const ARQUIVOS = ["./", "./index.html", "./sw.js"];
 
 self.addEventListener("install", e => {
