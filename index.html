@@ -141,7 +141,7 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
         <div><label class="f">Tipo</label>
           <select class="fi" id="rTipo">
             <option>Leve</option><option>Moderado</option><option>Tempo</option>
-            <option>Tiros</option><option>Longão</option><option>Simulado</option><option>Prova</option>
+            <option>Tiros</option><option>Longão</option><option>Teste</option><option>Simulado</option><option>Prova</option><option>Bike</option><option>Escada</option>
           </select></div>
         <div><label class="f">Data</label><input class="fi" type="date" id="rData"></div>
       </div>
@@ -183,37 +183,37 @@ textarea.fi{min-height:58px;font-weight:400;font-size:14px}
 const W = {
 a:{nome:"Treino A · Inferior + Posterior",blocos:[
  {t:"1 · FORÇA PRINCIPAL — séries retas",cor:"#e8590c",rest:90,ex:[
-  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8–10",kg:80,inc:5,h:"Coxa abaixo da paralela. PESO TOTAL: barra de 20 kg + anilhas dos dois lados. ⬇️ ATÉ 26/10: fase de DESCIDA em 3 segundos controlados — é o que blinda o quadríceps contra os −63 m de descida do percurso. Cortar a partir de 26/10.",rec:"Fechou 4×10 a 80 kg com RPE 8,7 em 18/08 — primeira vez batendo o peso total (80 kg) limpo. Mantenha 80 kg e busque RPE 8 antes de subir para 82,5–85 kg."}]},
+  {id:"a_agacho",n:"Agachamento livre com barra",sets:4,reps:"8",kg:70,inc:5,h:"Coxa abaixo da paralela. PESO TOTAL: barra de 20 kg + anilhas dos dois lados. ⬇️ ATÉ 26/10: fase de DESCIDA em 3 segundos controlados — é o que blinda o quadríceps contra os −63 m de descida do percurso. Cortar a partir de 26/10.",rec:"REENTRADA (última perna: 04/09, 18 dias atrás). Você fechou 4×10 a 80 kg com RPE 8,5 em 04/09 — a força não sumiu em 18 dias, o que sumiu foi a tolerância do tendão e do dedão. 70 kg × 4×8 hoje, mantendo a descida de 3 s. Se fechar com RPE ≤ 8, vai a 75 kg em 25/09 e 80 kg em 29/09."}]},
  {t:"2 · BI-SET A — 4 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"a_leg",n:"Leg press 45",sets:4,reps:"10",kg:210,inc:10,h:"Não trave o joelho no topo.",rec:"4×10 a 200 kg com RPE 8,1 em 18/08 — sobrou fôlego em todas as series. Suba para 210 kg."},
-  {id:"a_stiff",n:"Stiff com barra",sets:4,reps:"10",kg:70,inc:5,h:"Joelho fixo, quadril para trás. PESO TOTAL: barra de 20 kg + anilhas.",rec:"4 series a 70 kg (10/10/10/9 reps) RPE 8,6 em 18/08 — quase fechando limpo. Mantenha 70 kg ate bater 4×10 com RPE 8."}]},
+  {id:"a_leg",n:"Leg press 45",sets:4,reps:"10",kg:180,inc:10,h:"Não trave o joelho no topo. Pé CHAPADO na plataforma — é o exercício de perna que menos mexe com o dedão, por isso ele volta mais perto da carga antiga que o resto.",rec:"Fazia 210 kg × 4×10 com RPE 8,5 em 04/09. Volta em 180 kg (−14%) só pra recalibrar. Fechou com RPE ≤ 8,5? Vai a 195 kg na próxima e 210 kg em 06/10."},
+  {id:"a_stiff",n:"Stiff com barra",sets:4,reps:"10",kg:60,inc:5,h:"Joelho fixo, quadril para trás. PESO TOTAL: barra de 20 kg + anilhas.",rec:"O stiff é o exercício que mais te castigou: 70 kg × 9 reps com RPE 9,0–9,5 em 04/09, e em 21/08 você não terminou a série. Ele NUNCA fechou 4×10 limpo. A retomada é a chance de arrumar isso: 60 kg × 4×10 com RPE ≤ 8,5. Só sobe depois de duas sessões fechando limpo."}]},
  {t:"3 · BI-SET B — 3 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"a_bulg",n:"Búlgaro com halteres",sets:3,reps:"10/perna",kg:20,inc:2,h:"⬇️ ATÉ 26/10: desça em 3 segundos controlados (não 2). Excêntrico lento é treino de descida. Cortar a partir de 26/10 — o músculo precisa chegar recuperado na prova.",rec:"Inconsistencia nas cargas em 18/08: fez 10 kg (8 reps RPE 9,5), 10 kg (10 reps RPE 8,5) e 20 kg (10 reps RPE 8,5) na mesma sessao. Use 20 kg (peso total, 2 halteres de 10) nas 3 series e anote certinho a carga de cada uma."},
-  {id:"a_flex",n:"Cadeira flexora",sets:3,reps:"10",kg:78,inc:5,h:"Contraia 1s, volta em 3s. Se a máquina for ruim, troque por stiff unilateral ou nordic curl.",rec:"3×10 a 73 kg RPE 8,2 em 18/08 — reps fechadas com folga. Suba para 78 kg."}]},
+  {id:"a_bulg",n:"Búlgaro com halteres",sets:3,reps:"10/perna",kg:15,inc:2,h:"🚫 NÃO FAÇA ATÉ 29/09. O pé de trás do búlgaro apoia na ponta, com o dedão em extensão máxima — é exatamente a articulação que levou a anilha. Substitua por LEG PRESS UNILATERAL 3×10 com 70 kg. ⬇️ Quando voltar (29/09) e até 26/10: descida em 3 segundos controlados.",rec:"Fazia 20 kg × 3×10 com RPE 8,5–9,0 em 04/09. Volta dia 29/09 com 15 kg, e só sobe pra 20 kg quando você fizer a série inteira sem pensar no dedo."},
+  {id:"a_flex",n:"Cadeira flexora",sets:3,reps:"10",kg:75,inc:5,h:"Contraia 1s, volta em 3s. Deitado, o dedão não pega nada — pode ir tranquilo.",rec:"3×10 a 78 kg com RPE 8,0 em 04/09, fácil. Volta em 75 kg só por causa dos 18 dias parado; fechou limpo, volta pra 78 kg na próxima e 82 kg em 06/10."}]},
  {t:"4 · BI-SET C — 3 rodadas",cor:"#1971c2",rest:45,ex:[
-  {id:"a_afu",n:"Afundo com halteres",sets:3,reps:"10/perna",kg:22,inc:2,h:"Passada longa, tronco ereto.",rec:"3×10 a 20 kg RPE 7,8 em 18/08 — sobra RPE. Suba para 22 kg."},
-  {id:"a_hip",n:"Elevação de quadril (hip thrust)",sets:3,reps:"12",kg:80,inc:5,h:"Segure 2s no topo.",rec:"Fez 80 kg × 10 (RPE 7,5) e depois foi para 90 kg × 10 (RPE 8,5) — ainda nao fechou as 12 reps em nenhuma carga. Fique nos 80 kg e feche as 12 reps antes de subir."}]},
+  {id:"a_afu",n:"Afundo com halteres",sets:3,reps:"10/perna",kg:24,inc:2,h:"🚫 NÃO FAÇA ATÉ 29/09 — mesma história do búlgaro: o pé de trás termina apoiado no dedão. Substitua por CADEIRA EXTENSORA 3×12 com carga moderada (RPE 8).",rec:"Você subiu de 20 para 30 kg entre 18/08 e 02/09 e segurou RPE 8,0–8,5 — foi o exercício que mais evoluiu no ciclo. Volta em 29/09 com 24 kg e retoma a escada dali."},
+  {id:"a_hip",n:"Elevação de quadril (hip thrust)",sets:3,reps:"12",kg:80,inc:5,h:"Segure 2s no topo. Pé chapado no chão — seguro pro dedão.",rec:"Fechou 3×12 a 80 kg com RPE 8,0 constante em 04/09 — a meta das 12 reps finalmente saiu. Repita 80 kg hoje pra confirmar depois da parada e vá pra 90 kg em 29/09. Glúteo forte é o que te faz subir os +65 m sem estourar o quadríceps."}]},
  {t:"5 · FINALIZADOR — tri-set, 3 rodadas",cor:"#2f9e44",rest:40,ex:[
-  {id:"a_pant",n:"Panturrilha em pé",sets:3,reps:"15",kg:35,inc:5,h:"Pausa de 1s no topo.",rec:"Fechou 16 e 15 reps a 30 kg com RPE 8 em 18/08. Meta batida — suba para 35 kg."},
-  {id:"a_pran",n:"Prancha isométrica",sets:3,reps:"55s",kg:0,inc:0,h:"Anote os segundos no campo de reps.",rec:"Fechou 50s em duas series (RPE 8/8,5) em 18/08. Suba para 55s."},
-  {id:"a_abd",n:"Abdominal infra",sets:3,reps:"15",kg:0,inc:0,h:"Lombar colada, sem balanço.",rec:"Primeira vez fechando 12 reps nas 3 series (RPE 8 constante) em 18/08. Suba a meta para 15 reps."}]}
+  {id:"a_pant",n:"Panturrilha em pé",sets:3,reps:"15",kg:20,inc:5,h:"⚠️ ESTE É O EXERCÍCIO MAIS ARRISCADO PRO SEU DEDÃO: subir na ponta do pé joga o peso todo no hálux. Amplitude PARCIAL (não suba até o talo) e pare na hora se o dedo reclamar. Se tiver panturrilha SENTADO na academia, prefira — ela tira parte da carga do antepé.",rec:"Fazia 35 kg × 3×15 com RPE 8,0–8,5 em 04/09. Hoje é 20 kg com amplitude parcial, e o critério pra subir não é o RPE — é o dedão não dar sinal nenhum nas 24h seguintes. 25 kg em 29/09, 30 kg em 06/10, 35 kg só em 13/10."},
+  {id:"a_pran",n:"Prancha isométrica",sets:3,reps:"60s",kg:0,inc:0,h:"Anote os segundos no campo de reps.",rec:"Fechou 3×60s com RPE 9,0 em 04/09. Core não perde nada em 18 dias — mantenha 60s e suba pra 70s em 06/10."},
+  {id:"a_abd",n:"Abdominal infra",sets:3,reps:"15",kg:0,inc:0,h:"Lombar colada, sem balanço.",rec:"Fechou 3×15 em 04/09 (RPE 7,5–9,0). Mantenha 15 reps e suba pra 18 quando a terceira série vier com RPE 8."}]}
 ]},
 b:{nome:"Treino B · Superior completo",blocos:[
  {t:"1 · FORÇA PRINCIPAL — séries retas",cor:"#e8590c",rest:90,ex:[
-  {id:"b_sup",n:"Supino reto com barra",sets:4,reps:"8–10",kg:75,inc:5,h:"Escápulas travadas, cotovelo a 45°. PESO TOTAL: barra de 20 kg + anilhas dos dois lados.",rec:"Duas sessoes seguidas travando: 10/10/9/8 em 19/08 e 10/10/8/8 em 24/08, RPE chegando a 9-9,5. Mantenha 75 kg mais uma sessao; se travar de novo, considere 72,5 kg pra fechar limpo antes de retomar a subida."}]},
+  {id:"b_sup",n:"Supino reto com barra",sets:4,reps:"8",kg:65,inc:2.5,h:"Escápulas travadas, cotovelo a 45°. PESO TOTAL: barra de 20 kg + anilhas dos dois lados. Detalhe da retomada: o supino usa apoio de pé no chão — se o dedão incomodar na hora de travar o corpo, apoie o pé mais para trás, no meio do pé.",rec:"Você cortou de 75 kg (08/09) para 60 kg na volta, e mesmo assim relatou RPE 8,5–9,0 com as reps caindo (10/10/9/9 em 17/09). Uma semana parado não tira 20% de força — esse RPE alto é contexto (rotina quebrada, pé protegendo o apoio), não perda real. Por isso a volta é em degrau, não de rastejo: 65 kg × 4×8. Fechou as 8 em todas com RPE ≤ 8,5, vai a 70 kg na próxima e 75 kg na seguinte."}]},
  {t:"2 · BI-SET A — 4 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"b_rem",n:"Remada máquina (neutra)",sets:4,reps:"10",kg:77.5,inc:5,h:"Puxe com o cotovelo, aperte a escápula.",rec:"Tentou 80 kg no set 1 (so 8 reps) e recuou para 75 kg no resto em 24/08 — autorregulagem certa. Va de 77,5 kg na proxima, buscando fechar 4×10."},
-  {id:"b_inc",n:"Incline press",sets:4,reps:"10",kg:32.5,inc:2.5,h:"Banco a 30–45°, ombro estável.",rec:"4×10 a 30 kg com RPE 8,5 constante em 19/08 — melhor execucao ate agora. Suba para 32,5 kg."}]},
+  {id:"b_rem",n:"Remada máquina (neutra)",sets:4,reps:"10",kg:68,inc:2.5,h:"Puxe com o cotovelo, aperte a escápula.",rec:"Em 17/09 você fez 68 kg e ainda precisou cair pra 60 kg na 4ª série (RPE 9,0). Antes da lesão era 77,5 kg × 4×10. Fique em 68 kg até fechar as QUATRO séries de 10 — é isso que libera os 72,5 kg, não o calendário."},
+  {id:"b_inc",n:"Incline press",sets:4,reps:"8",kg:28,inc:2,h:"Banco a 30–45°, ombro estável.",rec:"28 kg em 17/09 com as reps despencando (10/9/8/8, RPE até 9,5) — você está pagando meta de 10 reps com qualidade de execução. Mesma carga, meta menor: 4×8 a 28 kg limpos. Fechou os quatro oitos com RPE ≤ 8,5, aí sim volta a meta de 10 reps."}]},
  {t:"3 · BI-SET B — 4 rodadas",cor:"#1971c2",rest:60,ex:[
-  {id:"b_pux",n:"Puxada articulada aberta",sets:4,reps:"10",kg:120,inc:5,h:"Peito estufado, volta em 3s.",rec:"🎉 Fechou 4×10 limpo a 115 kg com RPE 8,5 constante em 24/08. Suba para 120 kg."},
-  {id:"b_des",n:"Desenvolvimento halteres sentado",sets:4,reps:"10",kg:20,inc:2,h:"Não trave o cotovelo no topo.",rec:"4×10 a 18 kg com RPE 8,5 constante em 24/08. Suba para 20 kg."}]},
+  {id:"b_pux",n:"Puxada articulada aberta",sets:4,reps:"10",kg:105,inc:5,h:"Peito estufado, volta em 3s — a descida controlada é parte do exercício.",rec:"🎉 O ÚNICO EXERCÍCIO QUE SAIU ILESO DA PARADA: 100 kg × 4×10 com RPE 8,5 em 14/09 E em 17/09, idêntico. A queda de 120 → 100 em 01/09 foi por causa dos 3 s de descida, não por perda de força. Está na hora de subir: 105 kg."},
+  {id:"b_des",n:"Desenvolvimento halteres sentado",sets:4,reps:"10",kg:18,inc:2,h:"Não trave o cotovelo no topo.",rec:"18 kg × 4×10 fechado em 17/09 com RPE 8,5 (só a 3ª série em 9,0) — praticamente de volta ao pré-lesão, que era 20 kg. Repita 18 kg hoje com RPE ≤ 8,5 e retome os 20 kg na próxima sessão."}]},
  {t:"4 · BI-SET C — 3 rodadas",cor:"#1971c2",rest:45,ex:[
-  {id:"b_rbx",n:"Remada baixa (pronada)",sets:3,reps:"12",kg:75,inc:5,h:"Tronco fixo, sem impulso lombar.",rec:"10/10/12 reps a 70 kg RPE 8,5 constante em 24/08 — ultima serie passou da meta. Suba para 75 kg."},
-  {id:"b_cru",n:"Crucifixo inclinado",sets:3,reps:"12",kg:20,inc:2,h:"Cotovelo fixo, não vire supino.",rec:"3×12 a 18 kg RPE 8,5/8/8 em 19/08 — consistente. Suba para 20 kg."}]},
+  {id:"b_rbx",n:"Remada baixa (pronada)",sets:3,reps:"10",kg:66,inc:5,h:"Tronco fixo, sem impulso lombar. Faça as TRÊS séries — nas duas últimas sessões ela ficou pelo caminho.",rec:"Bagunça nas últimas sessões: 68 kg falhando (10/10/8, RPE 9,5) em 14/09 e 61 kg sobrando (RPE 8,0–8,5, e só 2 séries) em 17/09. A carta certa está no meio: 66 kg × 3×10."},
+  {id:"b_cru",n:"Crucifixo inclinado",sets:3,reps:"12",kg:20,inc:2,h:"Cotovelo fixo, não vire supino.",rec:"18 kg em 17/09 com RPE 7,5/8,5/8,5 — sobrou folga, e você já tinha feito 20 kg × 12 em 26/08. Sobe pra 20 kg: é o exercício de Treino B que mais rápido pode voltar ao normal."}]},
  {t:"5 · FINALIZADOR — tri-set, 3 rodadas",cor:"#2f9e44",rest:40,ex:[
-  {id:"b_lat",n:"Elevação lateral",sets:3,reps:"12",kg:14,inc:1,h:"Sem impulso, até a linha do ombro.",rec:"3×12 a 12 kg RPE 8,5 constante em 24/08, de volta a academia normal. Suba para 14 kg."},
-  {id:"b_ros",n:"Rosca direta",sets:3,reps:"12",kg:22.5,inc:2.5,h:"Cotovelo colado ao tronco.",rec:"3×12 a 20 kg RPE 8,5 constante em 24/08. Suba para 22,5 kg."},
-  {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:50,inc:2.5,h:"Abra a corda no fim.",rec:"Completou as 3 series pela primeira vez (12/12/12, RPE 9 constante) em 24/08. RPE ainda alto — mantenha 50 kg ate RPE 8 antes de subir."}]}
+  {id:"b_lat",n:"Elevação lateral",sets:3,reps:"12",kg:10,inc:2,h:"Sem impulso, até a linha do ombro.",rec:"Em 17/09 você começou com 12 kg (RPE 9,5) e teve que cair pra 10 kg nas duas seguintes. Comece em 10 kg nas três séries e feche limpo — ombro é articulação, não se força na retomada. 12 kg volta quando as três séries vierem em RPE 8,5."},
+  {id:"b_ros",n:"Rosca direta",sets:3,reps:"12",kg:20,inc:2.5,h:"Cotovelo colado ao tronco.",rec:"3×12 a 20 kg com RPE 9,0 constante em 17/09 — fechou tudo, mas caro. Mantenha 20 kg: a meta agora é fazer as mesmas 12 reps com RPE 8,5, e aí sim 22,5 kg."},
+  {id:"b_tri",n:"Tríceps corda",sets:3,reps:"12",kg:45,inc:2.5,h:"Abra a corda no fim.",rec:"50 kg travado com RPE 9,0–9,5 desde 14/08 — seis semanas no mesmo lugar, pagando caro. Em 03/09, a 45 kg, o RPE foi 8,5. Desce pra 45 kg de propósito: fecha 3×12 em RPE 8,5 por duas sessões e então sobe. Isso é progressão, não recuo."}]}
 ]}};
 
 /* ============ PLANO DE CORRIDA — 25/08 a 14/11/2026 (82 dias) ============ */
@@ -246,61 +246,61 @@ const PLANO = [
 ["2026-09-18", "leve", "30 min bem fácil", "Poupe a perna: amanhã tem simulado.", "Treino B — Superior"],
 ["2026-09-19", "simulado", "SIMULADO 1 — 5 km no percurso", "Alvo 28:00–28:30. OBRIGATÓRIO: correr a subida inteira e passar o km 3 com FC ABAIXO DE 168. É diagnóstico, não é prova — não vale acelerar na descida pra ganhar tempo.", "Descanso de musculação"],
 ["2026-09-20", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-09-21", "leve", "40 min regenerativo", "Bem leve, FC abaixo de 150. Dia de absorver o simulado.", "Treino B — Superior"],
-["2026-09-22", "tiro", "5 × 800 m", "Ritmo 4:40–5:15 /km. Recuperação de 2' trotando. 10' de aquecimento antes e volta à calma depois.", "Treino A — Inferior PESADO (depois da corrida)"],
-["2026-09-23", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-09-24", "tempo", "4 km contínuos", "Ritmo 5:20–5:50 /km.", "Treino A — Inferior moderado (depois da corrida)"],
-["2026-09-25", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-09-26", "long", "10 km — últimos 3 km a 6:00 /km", "Fácil até o km 7, depois segure 6:00 /km até o fim. Treino de terminar cansado no controle.", "Descanso de musculação"],
-["2026-09-27", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-09-28", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-09-29", "ladeira", "6 × a SUBIDA REAL do km 4", "No próprio percurso da prova. Suba o trecho de +49 m seis vezes, desça trotando. Passada curta, braços trabalhando.", "Treino A — Inferior PESADO (depois da corrida)"],
-["2026-09-30", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-10-01", "tiro", "6 × 600 m", "Ritmo 4:40–5:15 /km, recuperação de 90s trotando.", "Treino A — Inferior moderado (depois da corrida)"],
-["2026-10-02", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-03", "long", "11 km fácil", "Ritmo 6:30–6:50 /km. Maior volume do ciclo até aqui.", "Descanso de musculação"],
-["2026-10-04", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-10-05", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-06", "ladeira", "SUBIDA COM PERNA CANSADA", "20 min moderado ANTES e só então 5 × 2 min de subida. Simula exatamente o que a prova cobra: subir com a perna já gasta.", "Treino A — Inferior PESADO (depois da corrida)"],
-["2026-10-07", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-10-08", "tempo", "5 km contínuos", "Ritmo 5:20–5:50 /km. Sessão mais longa de tempo do ciclo.", "Treino A — Inferior moderado (depois da corrida)"],
-["2026-10-09", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-10", "long", "11 km — últimos 4 km a 5:50 /km", "Fácil até o km 7, depois 5:50 /km firme até o fim.", "Descanso de musculação"],
-["2026-10-11", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-10-12", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-13", "tiro", "4 × 1000 m", "Ritmo 4:40–5:15 /km, recuperação de 2'30\" trotando.", "Treino A — Inferior PESADO (depois da corrida)"],
-["2026-10-14", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-10-15", "mod", "30 min moderado + 6 × 100 m", "Aliviando pro simulado de sábado.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-09-21", "teste", "TESTE DE RETOMADA — 6 × 4 min", "PRIMEIRA CORRIDA EM 19 DIAS. Esteira, 1% de inclinação. 5 min caminhando a 5,5 km/h + 6 blocos de 4 min correndo a 8,5–9,0 km/h com 1 min caminhando a 5,5 entre eles + 5 min caminhando. Dá ~4,2 km em 35 min. TETO: FC 160 e Borg 13 — se passar, corta o bloco. ABORTA NA HORA se doer o dedão ou se você perceber que está mancando/pisando torto. Anote FC ao fim de cada bloco e a dor no dedão (0–10) durante e 24h depois.", "Treino B — Superior (cargas de reentrada)"],
+["2026-09-22", "cruzado", "Bike 30 min + escada 10 min", "Zero impacto no dia seguinte ao teste — é assim que se descobre se o dedão aguentou. Bike em Borg 12–13, escada em ritmo constante. Se o dedão acordou dolorido hoje, tira a escada e faz só bike.", "Treino A — Inferior REINTRODUÇÃO (18 dias sem perna)"],
+["2026-09-23", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-09-24", "leve", "25 min contínuos bem leve", "Primeira corrida CONTÍNUA da retomada, sem caminhada no meio. 7:00–7:20 /km (8,2–8,6 km/h na esteira). Borg 12. Não é dia de testar ritmo.", "Descanso de musculação — a perna de terça ainda está cobrando"],
+["2026-09-25", "cruzado", "Bike 25 min leve", "Recuperação ativa. Borg 12, sem escada.", "Treino B — Superior"],
+["2026-09-26", "leve", "30 min contínuos na rua", "Primeira corrida fora da esteira. Terreno PLANO — nada de percurso da prova ainda. 6:50–7:10 /km. O objetivo é o pé aprender a pisar no asfalto de novo.", "Descanso de musculação"],
+["2026-09-27", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-09-28", "leve", "30 min leve", "6:50–7:10 /km. Semana 2: volume sobe, intensidade ainda não.", "Treino B — Superior"],
+["2026-09-29", "mod", "25 min moderado", "Primeiro estímulo de intensidade desde 02/09. 6:20–6:40 /km. Se a FC passar de 165, vira leve e acabou.", "Treino A — Inferior (búlgaro e afundo VOLTAM hoje, com carga reduzida)"],
+["2026-09-30", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-10-01", "leve", "35 min leve", "6:50–7:10 /km.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-02", "cruzado", "Bike 30 min", "Borg 12–13. Poupa o pé antes do longo de sábado.", "Treino B — Superior"],
+["2026-10-03", "long", "6 km fácil", "6:30–6:50 /km. Maior distância desde a lesão — terreno plano.", "Descanso de musculação"],
+["2026-10-04", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-10-05", "leve", "40 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-06", "ladeira", "5 × 2 min de subida", "PRIMEIRA LADEIRA DA RETOMADA — 15 dias depois do teste, de propósito. Esteira 9,5 km/h a 5–6%. TETO DE 6%, sem exceção. Recuperação de 2 min caminhando (não trotando) nesta primeira sessão.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-07", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-10-08", "tempo", "2 km contínuos", "5:30–5:50 /km. Volta do treino de tempo, em dose curta. 10 min de aquecimento antes.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-09", "leve", "35 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-10", "long", "8 km fácil", "6:30–6:50 /km.", "Descanso de musculação"],
+["2026-10-11", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-10-12", "leve", "40 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-13", "ladeira", "6 × 2 min de subida", "Esteira 9,5 km/h a 5–6%. Recuperação de 2 min trotando.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-14", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-10-15", "mod", "30 min moderado + 6 × 100 m", "Moderado a 6:20–6:40 /km e os 100 m progressivos soltos no fim. Aliviando pro simulado.", "Treino A — Inferior moderado (depois da corrida)"],
 ["2026-10-16", "leve", "25 min bem fácil", "Véspera de simulado. Perna leve.", "Treino B — Superior"],
-["2026-10-17", "simulado", "SIMULADO 2 — 5 km no percurso (quase-prova)", "Alvo 26:00–26:30 no pacing ensaiado: 5:00 / 5:05 / 5:05 / 6:00 / 5:15. AQUI a meta de 25:00 se confirma ou vira 26:30.", "Descanso de musculação"],
-["2026-10-18", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-10-19", "leve", "40 min regenerativo", "FC abaixo de 150.", "Treino B — Superior"],
-["2026-10-20", "tiro", "8 × 400 m", "Ritmo 4:40–5:00 /km, recuperação de 90s. Velocidade pura.", "Treino A — Inferior PESADO (depois da corrida)"],
-["2026-10-21", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-10-22", "tempo", "4 km contínuos", "Ritmo 5:20–5:40 /km.", "Treino A — Inferior moderado (depois da corrida)"],
-["2026-10-23", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-24", "long", "10 km — 3 km do meio no pace de prova", "Os km 4, 5 e 6 a 5:17 /km. Resto fácil.", "Descanso de musculação"],
-["2026-10-25", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-10-26", "leve", "40 min leve", "Ritmo 6:50–7:10 /km. A partir de hoje a musculação de perna reduz volume.", "Treino B — Superior"],
+["2026-10-17", "simulado", "SIMULADO 1 — 5 km no percurso", "Primeiro contato com o percurso desde 26/08. Alvo 27:30–28:30. OBRIGATÓRIO: correr a subida inteira e passar o km 3 com FC ABAIXO DE 168. É diagnóstico, não é prova — não vale acelerar na descida pra ganhar tempo.", "Descanso de musculação"],
+["2026-10-18", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-10-19", "leve", "40 min regenerativo", "FC abaixo de 150. Dia de absorver o simulado.", "Treino B — Superior"],
+["2026-10-20", "tiro", "6 × 600 m", "4:50–5:15 /km, recuperação de 90s trotando. Primeiros tiros do ciclo pós-lesão.", "Treino A — Inferior PESADO (depois da corrida)"],
+["2026-10-21", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-10-22", "tempo", "3 km contínuos", "5:20–5:45 /km.", "Treino A — Inferior moderado (depois da corrida)"],
+["2026-10-23", "leve", "35 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-24", "long", "9 km — 3 km do meio a 6:00 /km", "Fácil nas pontas, os km 4, 5 e 6 firmes a 6:00.", "Descanso de musculação"],
+["2026-10-25", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-10-26", "leve", "40 min leve", "6:50–7:10 /km. A partir de hoje a perna reduz volume e a excêntrica de 3 s ACABA — o músculo precisa chegar recuperado na prova.", "Treino B — Superior"],
 ["2026-10-27", "ladeira", "20 min moderado + 6 × 90 s de subida forte", "Última sessão dura de ladeira do ciclo.", "Treino A — Inferior, VOLUME REDUZIDO"],
-["2026-10-28", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-10-29", "tiro", "5 × 1000 m", "Ritmo 4:50–5:10 /km, recuperação de 2'30\".", "Treino A — Inferior leve"],
-["2026-10-30", "leve", "35 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-10-31", "long", "10 km — 3 km finais a 5:20 /km", "Terminar rápido com a perna cansada. Ensaio do que a prova pede.", "Descanso de musculação"],
-["2026-11-01", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
-["2026-11-02", "leve", "40 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-11-03", "tiro", "6 × 400 m soltos", "Ritmo de prova, sem forçar. Recuperação completa.", "Treino A — ÚLTIMA perna pesada do ciclo"],
-["2026-11-04", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior"],
-["2026-11-05", "tempo", "3 km contínuos", "Ritmo 5:20–5:40 /km. Volume caindo, intensidade mantida.", "Treino A — Inferior leve"],
-["2026-11-06", "leve", "30 min leve", "Ritmo 6:50–7:10 /km.", "Treino B — Superior"],
-["2026-11-07", "long", "ENSAIO GERAL — 3 km no percurso", "No pacing exato da prova, SEM all-out. Só calibra a sensação: 5:00 / 5:05 / 5:05.", "Descanso de musculação"],
-["2026-11-08", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece.", "—"],
+["2026-10-28", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-10-29", "tiro", "5 × 800 m", "4:50–5:10 /km, recuperação de 2 min trotando.", "Treino A — Inferior leve"],
+["2026-10-30", "leve", "35 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-10-31", "simulado", "SIMULADO 2 — 5 km no percurso (quase-prova)", "AQUI A META FINAL SE DECIDE. Pacing ensaiado: 5:10 / 5:15 / 5:20 / 6:15 / 5:30. Veio em 26:30 ou menos, a prova é 26:00 e o 25:00 volta pra mesa. Veio acima de 27:30, a meta honesta é 27:00 na prova.", "Descanso de musculação"],
+["2026-11-01", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
+["2026-11-02", "leve", "40 min regenerativo", "FC abaixo de 150.", "Treino B — Superior"],
+["2026-11-03", "tiro", "6 × 400 m soltos", "No pace de prova, sem forçar. Recuperação completa.", "Treino A — ÚLTIMA perna pesada do ciclo"],
+["2026-11-04", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior"],
+["2026-11-05", "tempo", "3 km contínuos", "5:20–5:40 /km. Volume caindo, intensidade mantida.", "Treino A — Inferior leve"],
+["2026-11-06", "leve", "30 min leve", "6:50–7:10 /km.", "Treino B — Superior"],
+["2026-11-07", "long", "ENSAIO GERAL — 3 km no percurso", "No pacing exato da prova, SEM all-out. Só calibra a sensação: 5:10 / 5:15 / 5:20.", "Descanso de musculação"],
+["2026-11-08", "off", "Descanso total", "Sem corrida e sem musculação. É no descanso que a adaptação acontece — e nesta retomada o descanso vale ainda mais.", "—"],
 ["2026-11-09", "leve", "30 min leve", "Taper começou. Musculação de perna acabou — só superior e leve daqui pra frente.", "Treino B — Superior leve"],
-["2026-11-10", "tiro", "5 × 200 m no pace de prova", "5:17 /km, recuperação completa. Só pra manter a velocidade viva.", "Treino B — Superior leve (sem perna)"],
-["2026-11-11", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. É isso que sustenta 12 semanas sem lesão. Se você fizer questão de correr, então é 30 min plano em Borg 12, sem subida.", "Treino B — Superior leve ou descanso"],
+["2026-11-10", "tiro", "5 × 200 m no pace de prova", "Recuperação completa. Só pra manter a velocidade viva.", "Treino B — Superior leve (sem perna)"],
+["2026-11-11", "off", "Off de corrida", "Quarta é descanso de corrida POR DESENHO — o estresse está concentrado em terça e quinta pra que quarta e domingo sejam fáceis de verdade. Se você fizer questão de mexer, é bike leve 20 min em Borg 12, sem impacto.", "Treino B — Superior leve ou descanso"],
 ["2026-11-12", "leve", "25 min leve + 4 × 100 m", "Progressivos curtos pra deixar a perna solta.", "Descanso de musculação"],
 ["2026-11-13", "off", "Véspera de prova", "Sem corrida. Dormir bem, comer normal, nada de comida nova. Separe roupa e tênis hoje.", "—"],
-["2026-11-14", "race", "PROVA 5 K — Parque Ecológico", "PLANO A (25:00): km1 5:00 com FC abaixo de 158 · km2 5:05 (descida íngreme — cadência alta, não se jogue) · km3 5:05 · km4 6:00 na subida, passada curta · 700 m finais 5:15. PLANO B (dia ruim): 5:05 / 5:10 / 5:10 / 6:10 / 5:25 = 25:22. REGRA DE OURO: passou o km 1 abaixo de 4:55 ou com FC acima de 160 — FREIE.", "—"]];
+["2026-11-14", "race", "PROVA 5 K — Parque Ecológico", "PLANO A (26:00): km1 5:10 com FC abaixo de 158 · km2 5:15 (descida íngreme — cadência acima de 180, não se jogue) · km3 5:20 · km4 6:15 na subida, passada curta e braços trabalhando · 700 m finais 5:30. PLANO B (dia ruim): 5:20 / 5:25 / 5:25 / 6:30 / 5:45 = 26:41. REGRA DE OURO: passou o km 1 abaixo de 5:00 ou com FC acima de 160 — FREIE. Foi exatamente esse erro que virou caminhada em 22/08.", "—"]];
 
 const TIPOS = {
  tiro:    {nome:"TIROS",    cor:"#c92a2a", bg:"#fff5f5", rua:"4:40–5:15 /km", est:"11,4–12,8 km/h", inc:"1%"},
@@ -311,6 +311,8 @@ const TIPOS = {
  ladeira: {nome:"LADEIRA",  cor:"#d9480f", bg:"#ffe8cc", rua:"esforço forte", est:"9,5 km/h",       inc:"5–6% — TETO"},
  simulado:{nome:"SIMULADO", cor:"#9c36b5", bg:"#f8f0fc", rua:"pacing de prova", est:"—",            inc:"percurso real"},
  race:    {nome:"PROVA",    cor:"#2f9e44", bg:"#ebfbee", rua:"5:17 /km médio", est:"—",             inc:"—"},
+ teste:   {nome:"TESTE",    cor:"#0c8599", bg:"#e3fafc", rua:"6:40–7:00 /km", est:"8,5–9,0 km/h",   inc:"1%"},
+ cruzado: {nome:"CRUZADO",  cor:"#495057", bg:"#f1f3f7", rua:"bike / escada",  est:"Borg 12–13",     inc:"sem impacto"},
  off:     {nome:"DESCANSO", cor:"#6b7486", bg:"#f1f3f7", rua:"—",              est:"—",             inc:"—"}};
 
 /* ============ AQUECIMENTO E VOLTA A CALMA ============ */
